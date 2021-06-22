@@ -28,6 +28,21 @@ describe('Calculator', () => {
     addButton.simulate('click');
     button1.simulate('click');
     buttonEquals.simulate('click');
-    expect(runningTotal.text()).toEqual('5')
-  })
+    expect(runningTotal.text()).toEqual('5');
+  });
+
+  it('should be able to subtract 4 from 7 and get 3', () => {
+    const button4 = container.find('#number4');
+    const button7 = container.find('#number7');
+    const subButton = container.find('#operator-subtract');
+    const buttonEquals = container.find('#operator-equals');
+    const runningTotal = container.find('#running-total');
+    button7.simulate('click');
+    subButton.simulate('click');
+    button4.simulate('click');
+    buttonEquals.simulate('click');
+    expect(runningTotal.text()).toEqual('3');
+  });
+
+  
 })
