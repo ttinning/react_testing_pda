@@ -14,4 +14,12 @@ describe("Calculator", () => {
     cy.get('#number3').click();
     cy.get('.display').should('contain', '123');
   })
+
+  it('should be abloe to do an arithmetical operation and update display with result', () => {
+    cy.get('#number4').click();
+    cy.get('#operator-multiply').click();
+    cy.get('#number5').click();
+    cy.get('#operator-equals').click();
+    cy.get('.display').should('contain', '20');
+  })
 })
